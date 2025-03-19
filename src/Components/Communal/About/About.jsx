@@ -1,8 +1,10 @@
+import NavBar from "../../Home/Navbar";
 
 const About = () => {
     return (
-        <div>
-            abount
+        <div className="w-11/12 mx-auto justify-center">
+            <NavBar />
+            About
         </div>
     );
 };
