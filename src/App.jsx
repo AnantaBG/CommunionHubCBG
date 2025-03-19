@@ -1,13 +1,16 @@
 import { Card } from 'flowbite-react';
 import React from 'react';
 import NavBar from './Components/Home/Navbar';
+import Intro from './Components/Home/Intro';
+import Hero from './Components/Home/Hero';
 
 const App = () => {
   return (
-    <div className='w-11/12 mx-auto'>
+    <section className='w-11/12 mx-auto'>
       <NavBar></NavBar>
-      <Card>hi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorem doloribus dolore alias minus, porro earum laborum. Laborum dolores deleniti consequuntur praesentium eius. Mollitia recusandae dignissimos nulla excepturi officiis, blanditiis tempora, deserunt, saepe tenetur explicabo tempore repellat ipsa distinctio commodi veritatis doloribus animi nobis! Eos veritatis at laborum quae, similique inventore debitis libero. Hic vero possimus quibusdam itaque odio suscipit excepturi deleniti nihil quo, sint ut eos dolore inventore fuga sapiente quis illo ea, omnis numquam ducimus similique. Asperiores, dolor quis fugit alias neque id veritatis obcaecati! Recusandae voluptas sunt sapiente nam architecto fuga voluptate sed a. Recusandae neque explicabo perferendis temporibus exercitationem obcaecati debitis, maxime maiores tempora inventore consequatur quo quasi ipsam provident sit similique, corporis adipisci rem quae dolorem! Magni enim voluptatibus accusamus ex earum vitae ea quam ut? Hic molestias et maiores. Earum quaerat perferendis eius accusamus ipsum nam cumque atque quod velit asperiores, quam, et quisquam iusto soluta doloremque delectus pariatur veritatis numquam laudantium dolorum natus debitis odit, explicabo iure? Ea, nobis accusantium? Cumque nulla minus quae, alias hic quo corporis esse maiores adipisci, nostrum pariatur nam iste minima error id est, enim ipsa recusandae ab ducimus sapiente impedit? Iste repudiandae quo, totam adipisci provident rem cum nulla dicta maxime officiis architecto vero similique, laboriosam error pariatur facilis quidem illum. Natus illo non hic ab qui autem nesciunt placeat cupiditate adipisci. Beatae sapiente asperiores tenetur iure, laborum deserunt! Enim sapiente delectus distinctio modi expedita atque id debitis ipsam quod, nobis rerum ut explicabo nihil nisi, corrupti ipsa aliquid? Sapiente soluta distinctio architecto debitis dolore numquam eum aliquid id doloribus perspiciatis similique dolorem aspernatur reprehenderit provident, mollitia quia culpa vitae molestiae vel esse. Placeat voluptatibus ducimus cum molestiae? Veritatis sint ratione architecto impedit inventore distinctio corporis nesciunt earum reiciendis labore rem, aliquam voluptas molestiae unde, vel nisi excepturi, dolor nulla sunt possimus incidunt. Cupiditate, deleniti eligendi animi perferendis enim facilis, ut consequatur veritatis ad, nihil earum minima. Commodi, veritatis. Distinctio repudiandae sed nobis adipisci, dolorum voluptate labore saepe natus odit laborum ullam totam doloribus exercitationem odio autem, nesciunt facere dolores molestiae ex illo ratione voluptatibus voluptatum! Voluptates fuga totam consequatur eaque placeat adipisci ullam numquam, modi quibusdam quo dolore cumque libero exercitationem. Nesciunt alias ullam repellendus quod saepe voluptatibus ad debitis quae? In modi quam maiores porro adipisci commodi ducimus id, praesentium rerum vitae ipsam aliquid placeat doloremque repellendus explicabo maxime sint architecto quaerat omnis aspernatur eius?</Card>
-    </div>
+      <Intro></Intro>
+      <Hero></Hero>
+    </section>
   );
 };
 

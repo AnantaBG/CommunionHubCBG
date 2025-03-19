@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navbar } from "flowbite-react";
 
 const NavBar = () => {
@@ -13,8 +12,11 @@ const NavBar = () => {
         <Navbar.Link href="#" active>
           Home
         </Navbar.Link>
-        <Navbar.Link href="#">
+        <Navbar.Link href="/events">
           Events
+        </Navbar.Link>
+        <Navbar.Link href="/about">
+          About
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
