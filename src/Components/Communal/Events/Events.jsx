@@ -1,7 +1,9 @@
-import { Card, Button, Modal, Label, TextInput, Textarea } from "flowbite-react";
+import { Card, Button, Modal, Label, Select, TextInput, Textarea } from "flowbite-react"; // Import Select
 import { useEffect, useState } from "react";
 import NavBar from "../../Home/Navbar";
 import Swal from "sweetalert2";
+import { CgAdd } from "react-icons/cg";
+import { BiAddToQueue } from "react-icons/bi";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -81,10 +83,10 @@ const Events = () => {
         if (addedEvent) {
           setEvents([...events, addedEvent]);
           setFilteredEvents([...filteredEvents, addedEvent]);
-          Swal.fire({ // SweetAlert success message
-            icon: 'success',
-            title: 'Event Added!',
-            text: 'The event has been successfully added.',
+          Swal.fire({
+            icon: "success",
+            title: "Event Added!",
+            text: "The event has been successfully added.",
           });
         }
 
@@ -99,20 +101,20 @@ const Events = () => {
         closeModal();
       } else {
         console.error("Event insertion failed:", result);
-         Swal.fire({
-            icon: 'error',
-            title: 'Event Add Failed!',
-            text: 'There was an error while adding the event.',
-          });
+        Swal.fire({
+          icon: "error",
+          title: "Event Add Failed!",
+          text: "There was an error while adding the event.",
+        });
       }
     } catch (e) {
       setError(e);
       console.error("Error adding event:", e);
-       Swal.fire({
-            icon: 'error',
-            title: 'Event Add Failed!',
-            text: 'There was an error while adding the event.',
-          });
+      Swal.fire({
+        icon: "error",
+        title: "Event Add Failed!",
+        text: "There was an error while adding the event.",
+      });
     }
   };
 
@@ -132,20 +134,20 @@ const Events = () => {
           Event List
         </h2>
         <div className="flex justify-center mb-4">
-          <Button onClick={() => handleFilter("All")} className="mx-1">
+          <Button onClick={() => handleFilter("All")} className="mx-1 rounded-full">
             All
           </Button>
-          <Button onClick={() => handleFilter("Religious")} className="mx-1">
+          <Button onClick={() => handleFilter("Religious")} className="mx-1 rounded-full">
             Religious
           </Button>
-          <Button onClick={() => handleFilter("Social")} className="mx-1">
+          <Button onClick={() => handleFilter("Social")} className="mx-1 rounded-full">
             Social
           </Button>
-          <Button onClick={() => handleFilter("Charity")} className="mx-1">
+          <Button onClick={() => handleFilter("Charity")} className="mx-1 rounded-full">
             Charity
           </Button>
-          <Button onClick={openModal} className="mx-1">
-            Add Event
+          <Button gradientDuoTone="greenToBlue" onClick={openModal} className="mx-1"><BiAddToQueue className="text-2xl"></BiAddToQueue>
+            Add New Event
           </Button>
         </div>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
@@ -211,12 +213,17 @@ const Events = () => {
             </div>
             <div>
               <Label htmlFor="category" value="Category" />
-              <TextInput
+              <Select
                 id="category"
                 name="category"
                 value={newEvent.category}
                 onChange={handleInputChange}
-              />
+              >
+                <option value="">Select a category</option>
+                <option value="Religious">Religious</option>
+                <option value="Social">Social</option>
+                <option value="Charity">Charity</option>
+              </Select>
             </div>
             <div>
               <Label htmlFor="img" value="Image URL" />
@@ -230,7 +237,7 @@ const Events = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleAddEvent}>Add Event</Button>
+          <Button color="success" onClick={handleAddEvent}>Add Event</Button>
           <Button color="gray" onClick={closeModal}>
             Cancel
           </Button>
