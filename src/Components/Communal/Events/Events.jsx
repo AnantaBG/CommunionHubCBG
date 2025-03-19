@@ -1,4 +1,4 @@
-import { Card, Button, Modal, Label, Select, TextInput, Textarea } from "flowbite-react"; // Import Select
+import { Card, Button, Modal, Label, Select, TextInput, Textarea, Spinner } from "flowbite-react"; // Import Select
 import { useEffect, useState } from "react";
 import NavBar from "../../Home/Navbar";
 import Swal from "sweetalert2";
@@ -23,7 +23,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://localhost:4000/allEvents");
+        const response = await fetch("https://communion-server.vercel.app/allEvents");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -58,7 +58,7 @@ const Events = () => {
 
   const handleAddEvent = async () => {
     try {
-      const response = await fetch("http://localhost:4000/addedEvent", {
+      const response = await fetch("https://communion-server.vercel.app/addedEvent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const Events = () => {
       const result = await response.json();
 
       if (result.acknowledged && result.insertedId) {
-        const fetchNewEventResponse = await fetch(`http://localhost:4000/allEvents`);
+        const fetchNewEventResponse = await fetch(`https://communion-server.vercel.app/allEvents`);
         if (!fetchNewEventResponse.ok) {
           throw new Error(`HTTP error fetching new event: ${fetchNewEventResponse.status}`);
         }
@@ -119,7 +119,13 @@ const Events = () => {
   };
 
   if (loading) {
-    return <p>Loading events...</p>;
+    return <div className="flex justify-center items-center h-screen">
+    <Spinner
+      className="w-11/12 h-10"
+      color="info"
+      aria-label="Info spinner example"
+    />
+  </div>;
   }
 
   if (error) {
@@ -133,7 +139,7 @@ const Events = () => {
         <h2 className="text-6xl my-5 flex justify-center text-center font-semibold text-slate-600 font-mono">
           Event List
         </h2>
-        <div className="flex justify-center mb-4">
+        <div className="sm:flex grid grid-cols-2 gap-2 justify-center mb-4">
           <Button onClick={() => handleFilter("All")} className="mx-1 rounded-full">
             All
           </Button>
@@ -146,7 +152,7 @@ const Events = () => {
           <Button onClick={() => handleFilter("Charity")} className="mx-1 rounded-full">
             Charity
           </Button>
-          <Button gradientDuoTone="greenToBlue" onClick={openModal} className="mx-1"><BiAddToQueue className="text-2xl"></BiAddToQueue>
+          <Button gradientDuoTone="greenToBlue" onClick={openModal} className="mx-1 col-span-2"><BiAddToQueue className="text-2xl"></BiAddToQueue>
             Add New Event
           </Button>
         </div>

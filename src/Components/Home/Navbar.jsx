@@ -18,7 +18,7 @@ const NavBar = () => {
           as={Link} // Use Link component
           to="/" // Use to prop instead of href
           active={location.pathname === "/"} // Check if current path matches
-          className={location.pathname === "/" ? "text-teal-500" : ""} // Apply teal color if active
+          className={location.pathname === "/" ? "text-teal-300" : ""} // Apply teal color if active
         >
           Home
         </Navbar.Link>
@@ -26,7 +26,7 @@ const NavBar = () => {
           as={Link}
           to="/events"
           active={location.pathname === "/events"}
-          className={location.pathname === "/events" ? "text-teal-500" : ""}
+          className={location.pathname === "/events" ? "text-teal-300" : ""}
         >
           Events
         </Navbar.Link>
@@ -34,7 +34,7 @@ const NavBar = () => {
           as={Link}
           to="/about"
           active={location.pathname === "/about"}
-          className={location.pathname === "/about" ? "text-teal-500" : ""}
+          className={location.pathname === "/about" ? "text-teal-300" : ""}
         >
           About
         </Navbar.Link>
