@@ -1,8 +1,8 @@
-import { Card } from 'flowbite-react';
 import React from 'react';
 import NavBar from './Components/Home/Navbar';
 import Intro from './Components/Home/Intro';
 import Hero from './Components/Home/Hero';
+
 
 const App = () => {
   return (
