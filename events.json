@@ -1,0 +1,82 @@
+[
+    {
+      "title": "Interfaith Harmony Dinner",
+      "date": "2024-11-15",
+      "location": "Community Hall, City Center",
+      "description": "A dinner celebrating diverse faiths and promoting understanding.",
+      "category": "Religious",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8PKOp2izKJkSV3Vy1HBvz0lhals1YzXnfyg&s"
+    },
+    {
+      "title": "Local Charity Run",
+      "date": "2024-12-05",
+      "location": "Riverside Park",
+      "description": "5K run to raise funds for local homeless shelter.",
+      "category": "Charity",
+      "img": "https://images.t2u.io/upload/event/listing/0-35432-AWSS307ea8bc0-f806-4220-8ea0-57fb60cde797-IIm8.png"
+    },
+      {
+      "title": "Community Movie Night",
+      "date": "2024-10-20",
+      "location": "Town Square",
+      "description": "Free outdoor movie screening for all ages.",
+      "category": "Social",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKmVH0Sib2gYYmgbve9rATH_O8vAhz6A0-JQ&s"
+    },
+    {
+      "title": "Holiday Food Drive",
+      "date": "2024-12-10",
+      "location": "Various Locations",
+      "description": "Donations of non-perishable food items for families in need.",
+      "category": "Charity",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9uezcPJqp8TLOCkwp1yY0EbvCsneCaBsnCA&s"
+    },
+    {
+      "title": "Spiritual Meditation Session",
+      "date": "2024-11-22",
+      "location": "Peaceful Retreat Center",
+      "description": "Guided meditation and mindfulness practice.",
+      "category": "Religious",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYl2EdYag2mLUJ91cxUoNs3Ep_tD2tQROxCw&s"
+    },
+    {
+      "title": "Neighborhood Cleanup",
+      "date": "2024-10-28",
+      "location": "Central Avenue",
+      "description": "Volunteer to help clean up the neighborhood streets.",
+      "category": "Social",
+      "img": "https://i.natgeofe.com/k/3519980b-ba58-456d-b691-2ed516c223e0/clean-it-up-textimage_3x2.jpg"
+    },
+      {
+      "title": "Youth Interfaith Workshop",
+      "date": "2024-11-08",
+      "location": "Youth Center",
+      "description": "Interactive workshop for young people to learn about different faiths.",
+      "category": "Religious",
+      "img": "https://media.licdn.com/dms/image/v2/D4E10AQHDGfetCBebjw/image-shrink_800/B4EZTgkY4OHMAc-/0/1738934423867?e=2147483647&v=beta&t=g5RdwepLOMil3yJX75dE_RY-qENc2NSn2WtXE17VjvA"
+    },
+    {
+      "title": "Winter Clothing Drive",
+      "date": "2024-12-18",
+      "location": "Community Center",
+      "description": "Donations of warm clothing for those in need during the winter months.",
+      "category": "Charity",
+      "img": "https://gateslibrary.org/wp-content/uploads/2024/01/Copy-of-Winter-Clothing-Drive-Instagram-Post.png"
+    },
+    {
+      "title": "Cultural Exchange Potluck",
+      "date": "2024-10-15",
+      "location": "Multicultural Center",
+      "description": "Share food and traditions from different cultures.",
+      "category": "Social",
+      "img": "https://www.supermomos.com/_next/image?url=https%3A%2F%2Fsupermomos-app-resources-us.s3.amazonaws.com%2Fpublic%2Fsocial_banners%2Fda83eb6e-d660-4974-8047-d72e5de2247f.png&w=1920&q=75"
+    },
+    {
+      "title": "Faith and Service Day",
+      "date": "2024-11-01",
+      "location": "Various Locations",
+      "description": "Volunteer projects organized by different faith communities.",
+      "category": "Religious",
+      "img": "https://www.ccscomets.org/editoruploads/files/CSD%20Graphic%20Blue.jpg"
+    }
+  ]
