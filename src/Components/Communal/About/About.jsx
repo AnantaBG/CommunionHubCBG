@@ -1,10 +1,15 @@
+/* eslint-disable no-unused-vars */
 import NavBar from "../../Home/Navbar";
 import { FaUsers, FaLightbulb, FaHeart, FaMapMarkerAlt, FaEnvelope, FaPhone, FaMap } from "react-icons/fa";
 import { motion } from "framer-motion"; // Import motion
+import { Helmet } from "react-helmet";
 
 const About = () => {
     return (
         <div className="w-11/12 mx-auto justify-center mb-5">
+          <Helmet>
+        <title>CommunionHUB | About</title>
+          </Helmet>
             <NavBar />
             <motion.h1
                 initial={{ opacity: 0, y: -20 }}

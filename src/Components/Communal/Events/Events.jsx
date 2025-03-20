@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Card, Button, Modal, Label, Select, TextInput, Textarea, Spinner } from "flowbite-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -5,6 +6,7 @@ import NavBar from "../../Home/Navbar";
 import Swal from "sweetalert2";
 import { BiAddToQueue } from "react-icons/bi";
 import { FaCalendarAlt, FaFileAlt, FaMapMarkerAlt, FaTag } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
@@ -134,6 +136,9 @@ const Events = () => {
 
   return (
     <div className="w-11/12 mx-auto ">
+      <Helmet>
+        <title>CommunionHUB | Events Add and Sort</title>
+      </Helmet>
       <NavBar></NavBar>
       <div className="my-5">
       <motion.h2
