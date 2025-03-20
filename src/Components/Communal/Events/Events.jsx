@@ -1,10 +1,10 @@
-import { Card, Button, Modal, Label, Select, TextInput, Textarea, Spinner } from "flowbite-react"; // Import Select
+import { Card, Button, Modal, Label, Select, TextInput, Textarea, Spinner } from "flowbite-react";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavBar from "../../Home/Navbar";
 import Swal from "sweetalert2";
-import { CgAdd } from "react-icons/cg";
 import { BiAddToQueue } from "react-icons/bi";
-
+import { FaCalendarAlt, FaFileAlt, FaMapMarkerAlt, FaTag } from "react-icons/fa";
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
@@ -136,43 +136,109 @@ const Events = () => {
     <div className="w-11/12 mx-auto ">
       <NavBar></NavBar>
       <div className="my-5">
-        <h2 className="text-6xl my-5 flex justify-center text-center font-semibold text-slate-600 font-mono">
-          Event List
-        </h2>
-        <div className="sm:flex grid grid-cols-2 gap-2 justify-center mb-4">
-          <Button onClick={() => handleFilter("All")} className="mx-1 rounded-full">
-            All
-          </Button>
-          <Button onClick={() => handleFilter("Religious")} className="mx-1 rounded-full">
-            Religious
-          </Button>
-          <Button onClick={() => handleFilter("Social")} className="mx-1 rounded-full">
-            Social
-          </Button>
-          <Button onClick={() => handleFilter("Charity")} className="mx-1 rounded-full">
-            Charity
-          </Button>
-          <Button gradientDuoTone="greenToBlue" onClick={openModal} className="mx-1 col-span-2"><BiAddToQueue className="text-2xl"></BiAddToQueue>
-            Add New Event
-          </Button>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-6xl my-5 flex justify-center text-center font-semibold text-slate-600 font-mono"
+    >
+        Event List
+    </motion.h2>
+    <div className="sm:flex grid grid-cols-2 gap-2 justify-center mb-4">
+        <motion.button
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Button onClick={() => handleFilter("All")} className="mx-1 rounded-full w-full">
+                All
+            </Button>
+        </motion.button>
+        <motion.button
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Button onClick={() => handleFilter("Religious")} className="mx-1 rounded-full w-full">
+                Religious
+            </Button>
+        </motion.button>
+        <motion.button
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Button onClick={() => handleFilter("Social")} className="mx-1 rounded-full w-full">
+                Social
+            </Button>
+        </motion.button>
+        <motion.button
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Button onClick={() => handleFilter("Charity")} className="mx-1 rounded-full w-full">
+                Charity
+            </Button>
+        </motion.button>
+        <motion.button
+            className="mx-1 col-span-2"
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Button
+                gradientDuoTone="greenToBlue"
+                onClick={openModal}
+                className="w-full"
+            >
+                <BiAddToQueue className="text-2xl" />
+                Add New Event
+            </Button>
+        </motion.button>
+          
         </div>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
-          {filteredEvents.map((event) => (
-            <Card key={event.title}>
-              {event.img && (
-                <img
-                  src={event.img}
-                  alt={event.title}
-                  className="min-w-60 min-h-40 max-h-40 max-w-60 mx-auto"
-                />
-              )}
-              <h3 className="text-2xl">{event.title}</h3>
-              <p>Date: {event.date}</p>
-              <p>Location: {event.location}</p>
-              <p>Description: {event.description}</p>
-              <p>Category: {event.category}</p>
+    {filteredEvents.map((event, index) => (
+        <motion.div
+            key={event.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+            className="w-full cursor-pointer" //ensure that the motion div takes up the full width of the grid cell.
+        >
+            <Card className="w-full h-full"> {/* set card to fill its container */}
+                {event.img && (
+                    <img
+                        src={event.img}
+                        alt={event.title}
+                        className="min-w-60 min-h-40 max-h-40 max-w-60 mx-auto"
+                    />
+                )}
+                <h3 className="text-2xl">{event.title}</h3>
+                <div className="flex items-center mb-1 text-gray-600">
+                    <FaCalendarAlt className="mr-2" />
+                    <p className="text-sm">Date: {event.date}</p>
+                </div>
+
+                <div className="flex items-center mb-1 text-gray-600">
+                    <FaMapMarkerAlt className="mr-2" />
+                    <p className="text-sm">Location: {event.location}</p>
+                </div>
+
+                <div className="flex items-start mb-1 text-gray-600">
+                    <FaFileAlt className="mr-2 mt-0.5" />
+                    <p className="text-sm">Description: {event.description}</p>
+                </div>
+
+                <div className="flex items-center text-gray-600">
+                    <FaTag className="mr-2" />
+                    <p className="text-sm">Category: {event.category}</p>
+                </div>
             </Card>
-          ))}
+        </motion.div>
+    ))}
         </div>
       </div>
 
